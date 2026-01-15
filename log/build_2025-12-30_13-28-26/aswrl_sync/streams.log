@@ -1,0 +1,46 @@
+[0.506s] Invoking command in '/home/zhvv/aswrl_ws/build/aswrl_sync': PYTHONPATH=/home/zhvv/aswrl_ws/build/aswrl_sync/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/zhvv/aswrl_ws/install/aswrl_sync/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/zhvv/aswrl_ws/build/aswrl_sync/build --no-deps symlink_data --force
+[0.714s] running develop
+[0.833s] running egg_info
+[0.833s] writing aswrl_sync.egg-info/PKG-INFO
+[0.833s] writing dependency_links to aswrl_sync.egg-info/dependency_links.txt
+[0.833s] writing entry points to aswrl_sync.egg-info/entry_points.txt
+[0.833s] writing requirements to aswrl_sync.egg-info/requires.txt
+[0.833s] writing top-level names to aswrl_sync.egg-info/top_level.txt
+[0.835s] reading manifest file 'aswrl_sync.egg-info/SOURCES.txt'
+[0.836s] writing manifest file 'aswrl_sync.egg-info/SOURCES.txt'
+[0.837s] running build_ext
+[0.837s] Creating /home/zhvv/aswrl_ws/install/aswrl_sync/lib/python3.10/site-packages/aswrl-sync.egg-link (link to .)
+[0.838s] Installing compensation_node script to /home/zhvv/aswrl_ws/install/aswrl_sync/lib/aswrl_sync
+[0.838s] Installing dummy_odom script to /home/zhvv/aswrl_ws/install/aswrl_sync/lib/aswrl_sync
+[0.838s] Installing export_policy script to /home/zhvv/aswrl_ws/install/aswrl_sync/lib/aswrl_sync
+[0.838s] Installing formation_controller script to /home/zhvv/aswrl_ws/install/aswrl_sync/lib/aswrl_sync
+[0.838s] Installing netem_controller script to /home/zhvv/aswrl_ws/install/aswrl_sync/lib/aswrl_sync
+[0.838s] Installing sync_client script to /home/zhvv/aswrl_ws/install/aswrl_sync/lib/aswrl_sync
+[0.838s] Installing sync_master script to /home/zhvv/aswrl_ws/install/aswrl_sync/lib/aswrl_sync
+[0.839s] Installing train_dqn script to /home/zhvv/aswrl_ws/install/aswrl_sync/lib/aswrl_sync
+[0.839s] 
+[0.839s] Installed /home/zhvv/aswrl_ws/build/aswrl_sync
+[0.839s] running symlink_data
+[0.839s] symbolically linking /home/zhvv/aswrl_ws/build/aswrl_sync/resource/aswrl_sync -> /home/zhvv/aswrl_ws/install/aswrl_sync/share/ament_index/resource_index/packages
+[0.839s] symbolically linking /home/zhvv/aswrl_ws/build/aswrl_sync/package.xml -> /home/zhvv/aswrl_ws/install/aswrl_sync/share/aswrl_sync
+[0.839s] symbolically linking /home/zhvv/aswrl_ws/build/aswrl_sync/launch/bringup_uav.launch.py -> /home/zhvv/aswrl_ws/install/aswrl_sync/share/aswrl_sync/launch
+[0.839s] symbolically linking /home/zhvv/aswrl_ws/build/aswrl_sync/launch/sim_multi_robot.launch.py -> /home/zhvv/aswrl_ws/install/aswrl_sync/share/aswrl_sync/launch
+[0.839s] symbolically linking /home/zhvv/aswrl_ws/build/aswrl_sync/launch/bringup_dog.launch.py -> /home/zhvv/aswrl_ws/install/aswrl_sync/share/aswrl_sync/launch
+[0.839s] symbolically linking /home/zhvv/aswrl_ws/build/aswrl_sync/gazebo/worlds/multi_robot.world -> /home/zhvv/aswrl_ws/install/aswrl_sync/share/aswrl_sync/gazebo/worlds
+[0.840s] symbolically linking /home/zhvv/aswrl_ws/build/aswrl_sync/gazebo/models/dog1/model.sdf -> /home/zhvv/aswrl_ws/install/aswrl_sync/share/aswrl_sync/gazebo/models/dog1
+[0.840s] symbolically linking /home/zhvv/aswrl_ws/build/aswrl_sync/gazebo/models/dog1/model.config -> /home/zhvv/aswrl_ws/install/aswrl_sync/share/aswrl_sync/gazebo/models/dog1
+[0.840s] symbolically linking /home/zhvv/aswrl_ws/build/aswrl_sync/gazebo/models/dog2/model.sdf -> /home/zhvv/aswrl_ws/install/aswrl_sync/share/aswrl_sync/gazebo/models/dog2
+[0.840s] symbolically linking /home/zhvv/aswrl_ws/build/aswrl_sync/gazebo/models/dog2/model.config -> /home/zhvv/aswrl_ws/install/aswrl_sync/share/aswrl_sync/gazebo/models/dog2
+[0.840s] symbolically linking /home/zhvv/aswrl_ws/build/aswrl_sync/gazebo/models/uav1/model.sdf -> /home/zhvv/aswrl_ws/install/aswrl_sync/share/aswrl_sync/gazebo/models/uav1
+[0.840s] symbolically linking /home/zhvv/aswrl_ws/build/aswrl_sync/gazebo/models/uav1/model.config -> /home/zhvv/aswrl_ws/install/aswrl_sync/share/aswrl_sync/gazebo/models/uav1
+[0.840s] symbolically linking /home/zhvv/aswrl_ws/build/aswrl_sync/config/cyclonedds_dog1.xml -> /home/zhvv/aswrl_ws/install/aswrl_sync/share/aswrl_sync/config
+[0.840s] symbolically linking /home/zhvv/aswrl_ws/build/aswrl_sync/config/cyclonedds_dog2.xml -> /home/zhvv/aswrl_ws/install/aswrl_sync/share/aswrl_sync/config
+[0.840s] symbolically linking /home/zhvv/aswrl_ws/build/aswrl_sync/config/cyclonedds_uav1.xml -> /home/zhvv/aswrl_ws/install/aswrl_sync/share/aswrl_sync/config
+[0.840s] symbolically linking /home/zhvv/aswrl_ws/build/aswrl_sync/config/net_scenarios/stable.yaml -> /home/zhvv/aswrl_ws/install/aswrl_sync/share/aswrl_sync/config/net_scenarios
+[0.840s] symbolically linking /home/zhvv/aswrl_ws/build/aswrl_sync/config/net_scenarios/multimodal.yaml -> /home/zhvv/aswrl_ws/install/aswrl_sync/share/aswrl_sync/config/net_scenarios
+[0.841s] symbolically linking /home/zhvv/aswrl_ws/build/aswrl_sync/config/net_scenarios/jitter.yaml -> /home/zhvv/aswrl_ws/install/aswrl_sync/share/aswrl_sync/config/net_scenarios
+[0.841s] symbolically linking /home/zhvv/aswrl_ws/build/aswrl_sync/config/net_scenarios/route_switch.yaml -> /home/zhvv/aswrl_ws/install/aswrl_sync/share/aswrl_sync/config/net_scenarios
+[0.841s] symbolically linking /home/zhvv/aswrl_ws/build/aswrl_sync/scripts/setup_netns.sh -> /home/zhvv/aswrl_ws/install/aswrl_sync/share/aswrl_sync/scripts
+[0.841s] symbolically linking /home/zhvv/aswrl_ws/build/aswrl_sync/scripts/cleanup_netns.sh -> /home/zhvv/aswrl_ws/install/aswrl_sync/share/aswrl_sync/scripts
+[0.841s] symbolically linking /home/zhvv/aswrl_ws/build/aswrl_sync/README.md -> /home/zhvv/aswrl_ws/install/aswrl_sync/share/aswrl_sync/README
+[0.872s] Invoked command in '/home/zhvv/aswrl_ws/build/aswrl_sync' returned '0': PYTHONPATH=/home/zhvv/aswrl_ws/build/aswrl_sync/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/zhvv/aswrl_ws/install/aswrl_sync/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/zhvv/aswrl_ws/build/aswrl_sync/build --no-deps symlink_data --force

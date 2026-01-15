@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="multi_robot">
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <include>
+      <uri>model://dog1</uri>
+      <name>dog1</name>
+      <pose>0 0 0.1 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://dog2</uri>
+      <name>dog2</name>
+      <pose>1 0 0.1 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://uav1</uri>
+      <name>uav1</name>
+      <pose>0 1 1.0 0 0 0</pose>
+    </include>
+  </world>
+</sdf>

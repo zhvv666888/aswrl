@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: aswrl-sync
+Version: 0.1.0
+Summary: ASW-RL adaptive sync window (DQN) + Kalman clock sync + netns/netem network emulation.
+Home-page: UNKNOWN
+Maintainer: Butterfly Dark
+Maintainer-email: woodward_christopher59484@hotmail.com
+License: Apache-2.0
+Platform: UNKNOWN
+
+UNKNOWN
+

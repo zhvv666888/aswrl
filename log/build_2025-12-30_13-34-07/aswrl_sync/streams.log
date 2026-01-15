@@ -1,0 +1,24 @@
+[0.498s] Invoking command in '/home/zhvv/aswrl_ws/build/aswrl_sync': PYTHONPATH=/home/zhvv/aswrl_ws/build/aswrl_sync/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/zhvv/aswrl_ws/install/aswrl_sync/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/zhvv/aswrl_ws/build/aswrl_sync/build --no-deps symlink_data
+[0.693s] running develop
+[0.810s] running egg_info
+[0.810s] writing aswrl_sync.egg-info/PKG-INFO
+[0.810s] writing dependency_links to aswrl_sync.egg-info/dependency_links.txt
+[0.810s] writing entry points to aswrl_sync.egg-info/entry_points.txt
+[0.810s] writing requirements to aswrl_sync.egg-info/requires.txt
+[0.810s] writing top-level names to aswrl_sync.egg-info/top_level.txt
+[0.812s] reading manifest file 'aswrl_sync.egg-info/SOURCES.txt'
+[0.813s] writing manifest file 'aswrl_sync.egg-info/SOURCES.txt'
+[0.814s] running build_ext
+[0.814s] Creating /home/zhvv/aswrl_ws/install/aswrl_sync/lib/python3.10/site-packages/aswrl-sync.egg-link (link to .)
+[0.815s] Installing compensation_node script to /home/zhvv/aswrl_ws/install/aswrl_sync/lib/aswrl_sync
+[0.815s] Installing dummy_odom script to /home/zhvv/aswrl_ws/install/aswrl_sync/lib/aswrl_sync
+[0.815s] Installing export_policy script to /home/zhvv/aswrl_ws/install/aswrl_sync/lib/aswrl_sync
+[0.815s] Installing formation_controller script to /home/zhvv/aswrl_ws/install/aswrl_sync/lib/aswrl_sync
+[0.815s] Installing netem_controller script to /home/zhvv/aswrl_ws/install/aswrl_sync/lib/aswrl_sync
+[0.815s] Installing sync_client script to /home/zhvv/aswrl_ws/install/aswrl_sync/lib/aswrl_sync
+[0.815s] Installing sync_master script to /home/zhvv/aswrl_ws/install/aswrl_sync/lib/aswrl_sync
+[0.815s] Installing train_dqn script to /home/zhvv/aswrl_ws/install/aswrl_sync/lib/aswrl_sync
+[0.816s] 
+[0.816s] Installed /home/zhvv/aswrl_ws/build/aswrl_sync
+[0.816s] running symlink_data
+[0.848s] Invoked command in '/home/zhvv/aswrl_ws/build/aswrl_sync' returned '0': PYTHONPATH=/home/zhvv/aswrl_ws/build/aswrl_sync/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/zhvv/aswrl_ws/install/aswrl_sync/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/zhvv/aswrl_ws/build/aswrl_sync/build --no-deps symlink_data

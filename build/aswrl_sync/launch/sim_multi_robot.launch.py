@@ -1,0 +1,1 @@
+/home/zhvv/aswrl_ws/src/aswrl_sync/launch/sim_multi_robot.launch.py

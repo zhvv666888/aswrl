@@ -1,0 +1,18 @@
+period_s: 120
+segments:
+  - t0: 0
+    delay_ms: 20
+    jitter_ms: 5
+    loss_pct: 0.5
+  - t0: 30
+    delay_ms: 80
+    jitter_ms: 10
+    loss_pct: 1.5
+  - t0: 60
+    delay_ms: 35
+    jitter_ms: 20
+    loss_pct: 2.0
+  - t0: 90
+    delay_ms: 100
+    jitter_ms: 5
+    loss_pct: 0.2

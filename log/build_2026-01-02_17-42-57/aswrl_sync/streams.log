@@ -1,0 +1,28 @@
+[0.494s] Invoking command in '/home/zhvv/aswrl_ws/src/aswrl_sync': PYTHONPATH=/home/zhvv/aswrl_ws/build/aswrl_sync/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/zhvv/aswrl_ws/install/aswrl_sync/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/aswrl_sync build --build-base /home/zhvv/aswrl_ws/build/aswrl_sync/build install --record /home/zhvv/aswrl_ws/build/aswrl_sync/install.log --single-version-externally-managed install_data
+[0.679s] running egg_info
+[0.679s] writing ../../build/aswrl_sync/aswrl_sync.egg-info/PKG-INFO
+[0.679s] writing dependency_links to ../../build/aswrl_sync/aswrl_sync.egg-info/dependency_links.txt
+[0.680s] writing entry points to ../../build/aswrl_sync/aswrl_sync.egg-info/entry_points.txt
+[0.680s] writing requirements to ../../build/aswrl_sync/aswrl_sync.egg-info/requires.txt
+[0.680s] writing top-level names to ../../build/aswrl_sync/aswrl_sync.egg-info/top_level.txt
+[0.682s] reading manifest file '../../build/aswrl_sync/aswrl_sync.egg-info/SOURCES.txt'
+[0.683s] writing manifest file '../../build/aswrl_sync/aswrl_sync.egg-info/SOURCES.txt'
+[0.683s] running build
+[0.683s] running build_py
+[0.684s] running install
+[0.684s] running install_lib
+[0.685s] running install_data
+[0.686s] running install_egg_info
+[0.688s] removing '/home/zhvv/aswrl_ws/install/aswrl_sync/lib/python3.10/site-packages/aswrl_sync-0.1.0-py3.10.egg-info' (and everything under it)
+[0.688s] Copying ../../build/aswrl_sync/aswrl_sync.egg-info to /home/zhvv/aswrl_ws/install/aswrl_sync/lib/python3.10/site-packages/aswrl_sync-0.1.0-py3.10.egg-info
+[0.689s] running install_scripts
+[0.706s] Installing compensation_node script to /home/zhvv/aswrl_ws/install/aswrl_sync/lib/aswrl_sync
+[0.707s] Installing dummy_odom script to /home/zhvv/aswrl_ws/install/aswrl_sync/lib/aswrl_sync
+[0.707s] Installing export_policy script to /home/zhvv/aswrl_ws/install/aswrl_sync/lib/aswrl_sync
+[0.707s] Installing formation_controller script to /home/zhvv/aswrl_ws/install/aswrl_sync/lib/aswrl_sync
+[0.707s] Installing netem_controller script to /home/zhvv/aswrl_ws/install/aswrl_sync/lib/aswrl_sync
+[0.707s] Installing sync_client script to /home/zhvv/aswrl_ws/install/aswrl_sync/lib/aswrl_sync
+[0.707s] Installing sync_master script to /home/zhvv/aswrl_ws/install/aswrl_sync/lib/aswrl_sync
+[0.707s] Installing train_dqn script to /home/zhvv/aswrl_ws/install/aswrl_sync/lib/aswrl_sync
+[0.707s] writing list of installed files to '/home/zhvv/aswrl_ws/build/aswrl_sync/install.log'
+[0.736s] Invoked command in '/home/zhvv/aswrl_ws/src/aswrl_sync' returned '0': PYTHONPATH=/home/zhvv/aswrl_ws/build/aswrl_sync/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/zhvv/aswrl_ws/install/aswrl_sync/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/aswrl_sync build --build-base /home/zhvv/aswrl_ws/build/aswrl_sync/build install --record /home/zhvv/aswrl_ws/build/aswrl_sync/install.log --single-version-externally-managed install_data

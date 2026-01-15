@@ -1,0 +1,18 @@
+period_s: 90
+segments:
+  - t0: 0
+    delay_ms: 25
+    jitter_ms: 3
+    loss_pct: 0.2
+  - t0: 20   # route switch: sudden longer path + jitter
+    delay_ms: 120
+    jitter_ms: 30
+    loss_pct: 3.0
+  - t0: 45   # partial recovery
+    delay_ms: 60
+    jitter_ms: 10
+    loss_pct: 1.0
+  - t0: 70   # switch back to stable
+    delay_ms: 25
+    jitter_ms: 3
+    loss_pct: 0.2

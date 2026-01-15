@@ -1,0 +1,6 @@
+period_s: 60
+segments:
+  - t0: 0
+    delay_ms: 20
+    jitter_ms: 1
+    loss_pct: 0.1

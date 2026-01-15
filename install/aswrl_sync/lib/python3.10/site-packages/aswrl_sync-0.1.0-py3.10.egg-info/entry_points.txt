@@ -1,0 +1,10 @@
+[console_scripts]
+compensation_node = aswrl_sync.compensation_node:main
+dummy_odom = aswrl_sync.dummy_odom:main
+export_policy = aswrl_sync.rl.export_policy:main
+formation_controller = aswrl_sync.formation_controller:main
+netem_controller = aswrl_sync.netem_controller:main
+sync_client = aswrl_sync.sync_client:main
+sync_master = aswrl_sync.sync_master:main
+train_dqn = aswrl_sync.rl.train_dqn:main
+

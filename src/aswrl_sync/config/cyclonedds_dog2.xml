@@ -1,0 +1,17 @@
+<CycloneDDS xmlns="https://cdds.io/config">
+  <Domain id="any">
+    <General>
+<Interfaces>
+  <NetworkInterface name="veth_ns_dog2_n" multicast="true" />
+</Interfaces>
+      <AllowMulticast>true</AllowMulticast>
+    </General>
+    <Discovery>
+      <Peers>
+        <Peer address="10.10.0.11"/>
+        <Peer address="10.10.0.12"/>
+        <Peer address="10.10.0.13"/>
+      </Peers>
+    </Discovery>
+  </Domain>
+</CycloneDDS>

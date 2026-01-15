@@ -1,0 +1,44 @@
+running develop
+running egg_info
+writing aswrl_sync.egg-info/PKG-INFO
+writing dependency_links to aswrl_sync.egg-info/dependency_links.txt
+writing entry points to aswrl_sync.egg-info/entry_points.txt
+writing requirements to aswrl_sync.egg-info/requires.txt
+writing top-level names to aswrl_sync.egg-info/top_level.txt
+reading manifest file 'aswrl_sync.egg-info/SOURCES.txt'
+writing manifest file 'aswrl_sync.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/zhvv/aswrl_ws/install/aswrl_sync/lib/python3.10/site-packages/aswrl-sync.egg-link (link to .)
+Installing compensation_node script to /home/zhvv/aswrl_ws/install/aswrl_sync/lib/aswrl_sync
+Installing dummy_odom script to /home/zhvv/aswrl_ws/install/aswrl_sync/lib/aswrl_sync
+Installing export_policy script to /home/zhvv/aswrl_ws/install/aswrl_sync/lib/aswrl_sync
+Installing formation_controller script to /home/zhvv/aswrl_ws/install/aswrl_sync/lib/aswrl_sync
+Installing netem_controller script to /home/zhvv/aswrl_ws/install/aswrl_sync/lib/aswrl_sync
+Installing sync_client script to /home/zhvv/aswrl_ws/install/aswrl_sync/lib/aswrl_sync
+Installing sync_master script to /home/zhvv/aswrl_ws/install/aswrl_sync/lib/aswrl_sync
+Installing train_dqn script to /home/zhvv/aswrl_ws/install/aswrl_sync/lib/aswrl_sync
+
+Installed /home/zhvv/aswrl_ws/build/aswrl_sync
+running symlink_data
+symbolically linking /home/zhvv/aswrl_ws/build/aswrl_sync/resource/aswrl_sync -> /home/zhvv/aswrl_ws/install/aswrl_sync/share/ament_index/resource_index/packages
+symbolically linking /home/zhvv/aswrl_ws/build/aswrl_sync/package.xml -> /home/zhvv/aswrl_ws/install/aswrl_sync/share/aswrl_sync
+symbolically linking /home/zhvv/aswrl_ws/build/aswrl_sync/launch/bringup_uav.launch.py -> /home/zhvv/aswrl_ws/install/aswrl_sync/share/aswrl_sync/launch
+symbolically linking /home/zhvv/aswrl_ws/build/aswrl_sync/launch/sim_multi_robot.launch.py -> /home/zhvv/aswrl_ws/install/aswrl_sync/share/aswrl_sync/launch
+symbolically linking /home/zhvv/aswrl_ws/build/aswrl_sync/launch/bringup_dog.launch.py -> /home/zhvv/aswrl_ws/install/aswrl_sync/share/aswrl_sync/launch
+symbolically linking /home/zhvv/aswrl_ws/build/aswrl_sync/gazebo/worlds/multi_robot.world -> /home/zhvv/aswrl_ws/install/aswrl_sync/share/aswrl_sync/gazebo/worlds
+symbolically linking /home/zhvv/aswrl_ws/build/aswrl_sync/gazebo/models/dog1/model.sdf -> /home/zhvv/aswrl_ws/install/aswrl_sync/share/aswrl_sync/gazebo/models/dog1
+symbolically linking /home/zhvv/aswrl_ws/build/aswrl_sync/gazebo/models/dog1/model.config -> /home/zhvv/aswrl_ws/install/aswrl_sync/share/aswrl_sync/gazebo/models/dog1
+symbolically linking /home/zhvv/aswrl_ws/build/aswrl_sync/gazebo/models/dog2/model.sdf -> /home/zhvv/aswrl_ws/install/aswrl_sync/share/aswrl_sync/gazebo/models/dog2
+symbolically linking /home/zhvv/aswrl_ws/build/aswrl_sync/gazebo/models/dog2/model.config -> /home/zhvv/aswrl_ws/install/aswrl_sync/share/aswrl_sync/gazebo/models/dog2
+symbolically linking /home/zhvv/aswrl_ws/build/aswrl_sync/gazebo/models/uav1/model.sdf -> /home/zhvv/aswrl_ws/install/aswrl_sync/share/aswrl_sync/gazebo/models/uav1
+symbolically linking /home/zhvv/aswrl_ws/build/aswrl_sync/gazebo/models/uav1/model.config -> /home/zhvv/aswrl_ws/install/aswrl_sync/share/aswrl_sync/gazebo/models/uav1
+symbolically linking /home/zhvv/aswrl_ws/build/aswrl_sync/config/cyclonedds_dog1.xml -> /home/zhvv/aswrl_ws/install/aswrl_sync/share/aswrl_sync/config
+symbolically linking /home/zhvv/aswrl_ws/build/aswrl_sync/config/cyclonedds_dog2.xml -> /home/zhvv/aswrl_ws/install/aswrl_sync/share/aswrl_sync/config
+symbolically linking /home/zhvv/aswrl_ws/build/aswrl_sync/config/cyclonedds_uav1.xml -> /home/zhvv/aswrl_ws/install/aswrl_sync/share/aswrl_sync/config
+symbolically linking /home/zhvv/aswrl_ws/build/aswrl_sync/config/net_scenarios/stable.yaml -> /home/zhvv/aswrl_ws/install/aswrl_sync/share/aswrl_sync/config/net_scenarios
+symbolically linking /home/zhvv/aswrl_ws/build/aswrl_sync/config/net_scenarios/multimodal.yaml -> /home/zhvv/aswrl_ws/install/aswrl_sync/share/aswrl_sync/config/net_scenarios
+symbolically linking /home/zhvv/aswrl_ws/build/aswrl_sync/config/net_scenarios/jitter.yaml -> /home/zhvv/aswrl_ws/install/aswrl_sync/share/aswrl_sync/config/net_scenarios
+symbolically linking /home/zhvv/aswrl_ws/build/aswrl_sync/config/net_scenarios/route_switch.yaml -> /home/zhvv/aswrl_ws/install/aswrl_sync/share/aswrl_sync/config/net_scenarios
+symbolically linking /home/zhvv/aswrl_ws/build/aswrl_sync/scripts/setup_netns.sh -> /home/zhvv/aswrl_ws/install/aswrl_sync/share/aswrl_sync/scripts
+symbolically linking /home/zhvv/aswrl_ws/build/aswrl_sync/scripts/cleanup_netns.sh -> /home/zhvv/aswrl_ws/install/aswrl_sync/share/aswrl_sync/scripts
+symbolically linking /home/zhvv/aswrl_ws/build/aswrl_sync/README.md -> /home/zhvv/aswrl_ws/install/aswrl_sync/share/aswrl_sync/README
