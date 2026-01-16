@@ -1,0 +1,41 @@
+running egg_info
+writing ../../build/aswrl_sync/aswrl_sync.egg-info/PKG-INFO
+writing dependency_links to ../../build/aswrl_sync/aswrl_sync.egg-info/dependency_links.txt
+writing entry points to ../../build/aswrl_sync/aswrl_sync.egg-info/entry_points.txt
+writing requirements to ../../build/aswrl_sync/aswrl_sync.egg-info/requires.txt
+writing top-level names to ../../build/aswrl_sync/aswrl_sync.egg-info/top_level.txt
+reading manifest file '../../build/aswrl_sync/aswrl_sync.egg-info/SOURCES.txt'
+writing manifest file '../../build/aswrl_sync/aswrl_sync.egg-info/SOURCES.txt'
+running build
+running build_py
+copying aswrl_sync/window_controller.py -> /home/zhvv/aswrl_ws/build/aswrl_sync/build/lib/aswrl_sync
+copying aswrl_sync/compensation_node.py -> /home/zhvv/aswrl_ws/build/aswrl_sync/build/lib/aswrl_sync
+copying aswrl_sync/rl/train_dqn.py -> /home/zhvv/aswrl_ws/build/aswrl_sync/build/lib/aswrl_sync/rl
+copying aswrl_sync/rl/aswrl_env.py -> /home/zhvv/aswrl_ws/build/aswrl_sync/build/lib/aswrl_sync/rl
+copying aswrl_sync/rl/export_policy.py -> /home/zhvv/aswrl_ws/build/aswrl_sync/build/lib/aswrl_sync/rl
+running install
+running install_lib
+copying /home/zhvv/aswrl_ws/build/aswrl_sync/build/lib/aswrl_sync/window_controller.py -> /home/zhvv/aswrl_ws/install/aswrl_sync/lib/python3.10/site-packages/aswrl_sync
+copying /home/zhvv/aswrl_ws/build/aswrl_sync/build/lib/aswrl_sync/compensation_node.py -> /home/zhvv/aswrl_ws/install/aswrl_sync/lib/python3.10/site-packages/aswrl_sync
+copying /home/zhvv/aswrl_ws/build/aswrl_sync/build/lib/aswrl_sync/rl/train_dqn.py -> /home/zhvv/aswrl_ws/install/aswrl_sync/lib/python3.10/site-packages/aswrl_sync/rl
+copying /home/zhvv/aswrl_ws/build/aswrl_sync/build/lib/aswrl_sync/rl/aswrl_env.py -> /home/zhvv/aswrl_ws/install/aswrl_sync/lib/python3.10/site-packages/aswrl_sync/rl
+copying /home/zhvv/aswrl_ws/build/aswrl_sync/build/lib/aswrl_sync/rl/export_policy.py -> /home/zhvv/aswrl_ws/install/aswrl_sync/lib/python3.10/site-packages/aswrl_sync/rl
+byte-compiling /home/zhvv/aswrl_ws/install/aswrl_sync/lib/python3.10/site-packages/aswrl_sync/window_controller.py to window_controller.cpython-310.pyc
+byte-compiling /home/zhvv/aswrl_ws/install/aswrl_sync/lib/python3.10/site-packages/aswrl_sync/compensation_node.py to compensation_node.cpython-310.pyc
+byte-compiling /home/zhvv/aswrl_ws/install/aswrl_sync/lib/python3.10/site-packages/aswrl_sync/rl/train_dqn.py to train_dqn.cpython-310.pyc
+byte-compiling /home/zhvv/aswrl_ws/install/aswrl_sync/lib/python3.10/site-packages/aswrl_sync/rl/aswrl_env.py to aswrl_env.cpython-310.pyc
+byte-compiling /home/zhvv/aswrl_ws/install/aswrl_sync/lib/python3.10/site-packages/aswrl_sync/rl/export_policy.py to export_policy.cpython-310.pyc
+running install_data
+running install_egg_info
+removing '/home/zhvv/aswrl_ws/install/aswrl_sync/lib/python3.10/site-packages/aswrl_sync-0.1.0-py3.10.egg-info' (and everything under it)
+Copying ../../build/aswrl_sync/aswrl_sync.egg-info to /home/zhvv/aswrl_ws/install/aswrl_sync/lib/python3.10/site-packages/aswrl_sync-0.1.0-py3.10.egg-info
+running install_scripts
+Installing compensation_node script to /home/zhvv/aswrl_ws/install/aswrl_sync/lib/aswrl_sync
+Installing dummy_odom script to /home/zhvv/aswrl_ws/install/aswrl_sync/lib/aswrl_sync
+Installing export_policy script to /home/zhvv/aswrl_ws/install/aswrl_sync/lib/aswrl_sync
+Installing formation_controller script to /home/zhvv/aswrl_ws/install/aswrl_sync/lib/aswrl_sync
+Installing netem_controller script to /home/zhvv/aswrl_ws/install/aswrl_sync/lib/aswrl_sync
+Installing sync_client script to /home/zhvv/aswrl_ws/install/aswrl_sync/lib/aswrl_sync
+Installing sync_master script to /home/zhvv/aswrl_ws/install/aswrl_sync/lib/aswrl_sync
+Installing train_dqn script to /home/zhvv/aswrl_ws/install/aswrl_sync/lib/aswrl_sync
+writing list of installed files to '/home/zhvv/aswrl_ws/build/aswrl_sync/install.log'

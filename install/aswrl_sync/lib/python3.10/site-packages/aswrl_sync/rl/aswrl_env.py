@@ -3,20 +3,19 @@ import random
 import numpy as np
 import gymnasium as gym
 from gymnasium import spaces
+from collections import deque
 
 WINDOW_SET = [1,2,4,8,16,32,64]
 
 class ASWRLEnv(gym.Env):
-    """A lightweight training environment for adaptive window selection.
-
-    This env is intentionally simple to keep reproduction easy:
-    - True clock drift is simulated (ppm)
-    - Network delay varies per scenario (stable/jitter/multimodal/route_switch)
-    - Agent selects window adjustment action: {0:down,1:stay,2:up}
-    - Reward encourages low sync error and avoids excessively large window.
-
-    Observation (6 floats):
-      [delay_mean_s, delay_var_s2, loss_rate, sync_err_s, delta_sync_err_s, window_norm]
+    """
+    Improved ASW-RL Environment with physically realistic lag.
+    
+    Key Changes from original:
+    1. Maintains a history buffer of raw measurements.
+    2. Window smoothing is applied explicitly (mean of last W samples).
+    3. Large windows now naturally cause LAG when offset drifts or jumps.
+    4. Reward is based on TRUE error (Sim-to-Real privilege).
     """
     metadata = {"render_modes": []}
 
@@ -26,9 +25,17 @@ class ASWRLEnv(gym.Env):
         self.rnd = random.Random(seed)
         self.dt = dt
 
+        # Action: 0:down, 1:stay, 2:up
         self.action_space = spaces.Discrete(3)
-        hi = np.array([5, 5, 1, 5, 5, 2], dtype=np.float32)
+        
+        # Observation: [delay_mean, delay_var, loss, current_est_offset, delta_est, window_norm]
+        # We increase bounds slightly to handle drift accumulation
+        hi = np.array([5.0, 5.0, 1.0, 10.0, 10.0, 2.0], dtype=np.float32)
         self.observation_space = spaces.Box(-hi, hi, dtype=np.float32)
+
+        # Max history matches max window size
+        self.max_window = max(WINDOW_SET)
+        self.raw_history = deque(maxlen=self.max_window)
 
         self.reset(seed=seed)
 
@@ -37,9 +44,9 @@ class ASWRLEnv(gym.Env):
         if self.scenario == "stable":
             return (20.0, 1.0, 0.001)
         if self.scenario == "jitter":
+            # Jitter 25ms is significant
             return (30.0, 25.0, 0.02)
         if self.scenario == "multimodal":
-            # 0-30: low, 30-60: high, 60-90: mid, 90-120: very high
             tp = t % 120.0
             if tp < 30: return (20.0, 5.0, 0.005)
             if tp < 60: return (80.0, 10.0, 0.015)
@@ -58,62 +65,100 @@ class ASWRLEnv(gym.Env):
             self.rnd.seed(seed)
         self.t = 0.0
         self.drift_ppm = self.rnd.uniform(10.0, 60.0)
-        self.offset_s = self.rnd.uniform(-0.01, 0.01)  # initial offset in seconds
-        self.last_err = 0.0
+        self.offset_s = self.rnd.uniform(-0.01, 0.01)
+        
         self.idx = WINDOW_SET.index(16)
         self.delay_hist = []
-        obs = self._obs(delay=0.02, delay_var=0.0, loss=0.0, err=self.offset_s, derr=0.0)
+        self.raw_history.clear()
+        
+        # Pre-fill history to avoid empty buffer issues at start
+        # Assume perfect history initially centered at offset_s
+        for _ in range(self.max_window):
+            self.raw_history.append(self.offset_s)
+
+        self.last_est = self.offset_s
+        
+        # Initial observation
+        obs = self._obs(delay=0.02, delay_var=0.0, loss=0.0, est=self.offset_s, dest=0.0)
         return obs, {}
 
-    def _obs(self, delay, delay_var, loss, err, derr):
+    def _obs(self, delay, delay_var, loss, est, dest):
         return np.array([
             float(delay),
             float(delay_var),
             float(loss),
-            float(err),
-            float(derr),
+            float(est),      # Robot sees the ESTIMATED offset
+            float(dest),     # Change in estimate
             float(WINDOW_SET[self.idx]) / 64.0
         ], dtype=np.float32)
 
     def step(self, action: int):
-        # apply action to window index
+        # 1. Update Window Index
         delta = int(action) - 1
         self.idx = max(0, min(len(WINDOW_SET)-1, self.idx + delta))
         W = WINDOW_SET[self.idx]
 
-        # simulate network for this step
+        # 2. Simulate Network Physics
         delay_ms, jitter_ms, loss = self._net_params(self.t)
+        
+        # One-way delay simulation
         delay = max(0.0, self.rnd.gauss(delay_ms, jitter_ms)) / 1000.0
-        # drop packets => larger measurement noise; emulate by increasing jitter
         if self.rnd.random() < loss:
-            delay = delay + self.rnd.uniform(0.05, 0.2)
+            delay += self.rnd.uniform(0.05, 0.2) # Loss penalty
 
+        # Network stats for observation (features)
         self.delay_hist.append(delay)
-        if len(self.delay_hist) > W:
-            self.delay_hist = self.delay_hist[-W:]
+        if len(self.delay_hist) > 64: # Track stats over max window
+            self.delay_hist = self.delay_hist[-64:]
         delay_mean = float(np.mean(self.delay_hist))
         delay_var = float(np.var(self.delay_hist)) if len(self.delay_hist) > 1 else 0.0
 
-        # drift evolves offset: offset += drift * dt
+        # 3. Evolve True Clock Physics
         drift = self.drift_ppm * 1e-6
-        self.offset_s += drift * self.dt
+        self.offset_s += drift * self.dt # True offset drifts over time
 
-        # measurement noise decreases with window (bigger window smoother but less responsive)
-        meas_noise = (jitter_ms / 1000.0) / math.sqrt(max(1, W))
-        meas = self.offset_s + self.rnd.gauss(0.0, meas_noise)
+        # 4. Generate RAW Noisy Measurement (No smoothing yet!)
+        # Noise comes purely from jitter (and other unmodeled noise)
+        # In PTP, meas noise ~ jitter / 2 roughly, but here we simplify
+        raw_noise_std = (jitter_ms / 1000.0) 
+        raw_meas = self.offset_s + self.rnd.gauss(0.0, raw_noise_std)
+        
+        self.raw_history.append(raw_meas)
 
-        # a simple "filter": error estimate is smoothed measurement
-        # bigger window -> slower response => add lag penalty under abrupt change
-        err = meas
+        # 5. Apply Window Smoothing (The Agent's Action Effect)
+        # Take the last W samples
+        current_samples = list(self.raw_history)[-W:]
+        est_offset = float(np.mean(current_samples))
 
-        derr = err - self.last_err
-        self.last_err = err
+        # Calculate dynamics for observation
+        dest_offset = est_offset - self.last_est
+        self.last_est = est_offset
 
-        # reward: small error, stable error, avoid huge window
-        r = - (abs(err) * 5.0 + abs(derr) * 1.0 + (W / 64.0) * 0.2 + delay_var * 2.0)
-        terminated = False
+        # 6. Calculate Reward based on TRUE ERROR (Privileged info)
+        # Ideally, we want est_offset == offset_s
+        # BUT, if W is huge and offset_s is drifting, est_offset will lag behind!
+        true_error = est_offset - self.offset_s
+        
+        # Reward function:
+        # - Penalize square of true error (MSE proxy)
+        # - Penalize window size slightly (computational cost / response ability)
+        # - Penalize huge oscillations in estimate
+        r = - (abs(true_error) * 10.0 + abs(dest_offset) * 2.0 + (W / 64.0) * 0.1)
+
         self.t += self.dt
-        truncated = self.t > 120.0  # episode length
-        obs = self._obs(delay_mean, delay_var, loss, err, derr)
-        info = {"W": W, "delay_ms": delay_ms, "jitter_ms": jitter_ms, "loss": loss}
+        terminated = False
+        truncated = self.t > 120.0
+        
+        # 7. Observation
+        # Note: We feed 'est_offset' to the agent, not the raw error. 
+        # The agent sees "where I am" and "how jittery the network is".
+        obs = self._obs(delay_mean, delay_var, loss, est_offset, dest_offset)
+        
+        info = {
+            "W": W, 
+            "true_error": true_error, # For logging
+            "raw_meas": raw_meas,
+            "lag": true_error,        # Lag is essentially the error
+            "jitter_ms": jitter_ms
+        }
         return obs, float(r), terminated, truncated, info

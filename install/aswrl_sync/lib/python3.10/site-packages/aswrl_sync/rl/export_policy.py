@@ -1,6 +1,6 @@
 import argparse
 import torch
-from .dqn import MLP
+from dqn import MLP
 
 def main():
     ap = argparse.ArgumentParser()

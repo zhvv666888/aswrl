@@ -1,4 +1,5 @@
 import rclpy
+import time
 from rclpy.node import Node
 from nav_msgs.msg import Odometry
 from std_msgs.msg import Float32MultiArray
@@ -7,12 +8,8 @@ from .logging_utils import JsonlLogger, default_log_dir
 
 class CompensationNode(Node):
     """Compensate timestamps for incoming odometry based on sync status.
-
-    Subscribe:
-      - odom_local (from local robot)
-      - sync/status: [offset_est_ns, delay_est_ns, drift, window, sync_err]
-    Publish:
-      - odom_synced: with header.stamp adjusted by estimated offset
+    
+    Updated: Adds CPU time profiling to demonstrate computational overhead.
     """
     def __init__(self):
         super().__init__('compensation_node')
@@ -34,6 +31,9 @@ class CompensationNode(Node):
             self.offset_ns = float(msg.data[0])
 
     def on_odom(self, msg: Odometry):
+        # Start profiling
+        t_start_cpu = time.process_time()
+
         out = Odometry()
         out.header = msg.header
         out.child_frame_id = msg.child_frame_id
@@ -41,14 +41,24 @@ class CompensationNode(Node):
         out.twist = msg.twist
 
         # Adjust: local_time - offset ~= master_time
-        # If offset = slave - master, then master = slave - offset.
         t = out.header.stamp.sec * 1_000_000_000 + out.header.stamp.nanosec
         t_corr = int(t - self.offset_ns)
         out.header.stamp.sec = int(t_corr // 1_000_000_000)
         out.header.stamp.nanosec = int(t_corr % 1_000_000_000)
 
         self.pub_odom.publish(out)
-        self.logger_jsonl.log({"event":"compensate", "t_in": int(t), "t_out": int(t_corr), "offset_ns": float(self.offset_ns)})
+        
+        # End profiling
+        t_end_cpu = time.process_time()
+        cpu_us = (t_end_cpu - t_start_cpu) * 1e6
+
+        self.logger_jsonl.log({
+            "event": "compensate", 
+            "t_in": int(t), 
+            "t_out": int(t_corr), 
+            "offset_ns": float(self.offset_ns),
+            "cpu_us": float(cpu_us) # Log CPU usage in microseconds
+        })
 
     def destroy_node(self):
         try:

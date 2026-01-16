@@ -4,8 +4,8 @@ import time
 import numpy as np
 import torch
 
-from .aswrl_env import ASWRLEnv
-from .dqn import MLP, ReplayBuffer, Transition, dqn_update
+from aswrl_env import ASWRLEnv
+from dqn import MLP, ReplayBuffer, Transition, dqn_update
 
 def main():
     ap = argparse.ArgumentParser()

@@ -37,14 +37,13 @@ class FixedWindowController:
 class RuleASWController:
     """Simple rule-based ASW baseline.
 
-    If delay variance increases -> expand window (stabilize).
-    If delay variance decreases and sync error is stable -> shrink window (increase responsiveness).
-
-    This is a practical baseline (thresholds can be tuned).
+    FIXED: Default thresholds adjusted to avoid saturation in high-jitter scenarios.
+    Previous default var_hi=5e14 was too low for 25ms jitter (approx 6.25e14).
+    New default var_hi=1e15 allows valid operation in Jitter scenario.
     """
     def __init__(self, window_set: Optional[List[int]] = None,
-                 var_hi: float = 5e14, var_lo: float = 1e14,
-                 err_hi_ns: float = 5e6, err_lo_ns: float = 1e6):
+                 var_hi: float = 1e15, var_lo: float = 1e14,
+                 err_hi_ns: float = 1e7, err_lo_ns: float = 2e6):
         self.window_set = window_set or WINDOW_SET_DEFAULT
         self.idx = self.window_set.index(16) if 16 in self.window_set else len(self.window_set)//2
         self.var_hi = float(var_hi)
@@ -53,6 +52,7 @@ class RuleASWController:
         self.err_lo_ns = float(err_lo_ns)
 
     def choose_W(self, delay_var: float, sync_err_ns: float) -> int:
+        # Hysteresis logic
         if delay_var > self.var_hi or abs(sync_err_ns) > self.err_hi_ns:
             self.idx = min(self.idx + 1, len(self.window_set) - 1)
         elif delay_var < self.var_lo and abs(sync_err_ns) < self.err_lo_ns:

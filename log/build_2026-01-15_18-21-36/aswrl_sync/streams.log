@@ -1,0 +1,43 @@
+[0.537s] Invoking command in '/home/zhvv/aswrl_ws/src/aswrl_sync': PYTHONPATH=/home/zhvv/aswrl_ws/build/aswrl_sync/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/zhvv/aswrl_ws/install/aswrl_sync/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/aswrl_sync build --build-base /home/zhvv/aswrl_ws/build/aswrl_sync/build install --record /home/zhvv/aswrl_ws/build/aswrl_sync/install.log --single-version-externally-managed install_data
+[0.720s] running egg_info
+[0.720s] writing ../../build/aswrl_sync/aswrl_sync.egg-info/PKG-INFO
+[0.721s] writing dependency_links to ../../build/aswrl_sync/aswrl_sync.egg-info/dependency_links.txt
+[0.721s] writing entry points to ../../build/aswrl_sync/aswrl_sync.egg-info/entry_points.txt
+[0.721s] writing requirements to ../../build/aswrl_sync/aswrl_sync.egg-info/requires.txt
+[0.721s] writing top-level names to ../../build/aswrl_sync/aswrl_sync.egg-info/top_level.txt
+[0.722s] reading manifest file '../../build/aswrl_sync/aswrl_sync.egg-info/SOURCES.txt'
+[0.723s] writing manifest file '../../build/aswrl_sync/aswrl_sync.egg-info/SOURCES.txt'
+[0.723s] running build
+[0.723s] running build_py
+[0.724s] copying aswrl_sync/window_controller.py -> /home/zhvv/aswrl_ws/build/aswrl_sync/build/lib/aswrl_sync
+[0.724s] copying aswrl_sync/compensation_node.py -> /home/zhvv/aswrl_ws/build/aswrl_sync/build/lib/aswrl_sync
+[0.724s] copying aswrl_sync/rl/train_dqn.py -> /home/zhvv/aswrl_ws/build/aswrl_sync/build/lib/aswrl_sync/rl
+[0.725s] copying aswrl_sync/rl/aswrl_env.py -> /home/zhvv/aswrl_ws/build/aswrl_sync/build/lib/aswrl_sync/rl
+[0.725s] copying aswrl_sync/rl/export_policy.py -> /home/zhvv/aswrl_ws/build/aswrl_sync/build/lib/aswrl_sync/rl
+[0.725s] running install
+[0.725s] running install_lib
+[0.726s] copying /home/zhvv/aswrl_ws/build/aswrl_sync/build/lib/aswrl_sync/window_controller.py -> /home/zhvv/aswrl_ws/install/aswrl_sync/lib/python3.10/site-packages/aswrl_sync
+[0.726s] copying /home/zhvv/aswrl_ws/build/aswrl_sync/build/lib/aswrl_sync/compensation_node.py -> /home/zhvv/aswrl_ws/install/aswrl_sync/lib/python3.10/site-packages/aswrl_sync
+[0.726s] copying /home/zhvv/aswrl_ws/build/aswrl_sync/build/lib/aswrl_sync/rl/train_dqn.py -> /home/zhvv/aswrl_ws/install/aswrl_sync/lib/python3.10/site-packages/aswrl_sync/rl
+[0.726s] copying /home/zhvv/aswrl_ws/build/aswrl_sync/build/lib/aswrl_sync/rl/aswrl_env.py -> /home/zhvv/aswrl_ws/install/aswrl_sync/lib/python3.10/site-packages/aswrl_sync/rl
+[0.726s] copying /home/zhvv/aswrl_ws/build/aswrl_sync/build/lib/aswrl_sync/rl/export_policy.py -> /home/zhvv/aswrl_ws/install/aswrl_sync/lib/python3.10/site-packages/aswrl_sync/rl
+[0.727s] byte-compiling /home/zhvv/aswrl_ws/install/aswrl_sync/lib/python3.10/site-packages/aswrl_sync/window_controller.py to window_controller.cpython-310.pyc
+[0.728s] byte-compiling /home/zhvv/aswrl_ws/install/aswrl_sync/lib/python3.10/site-packages/aswrl_sync/compensation_node.py to compensation_node.cpython-310.pyc
+[0.729s] byte-compiling /home/zhvv/aswrl_ws/install/aswrl_sync/lib/python3.10/site-packages/aswrl_sync/rl/train_dqn.py to train_dqn.cpython-310.pyc
+[0.729s] byte-compiling /home/zhvv/aswrl_ws/install/aswrl_sync/lib/python3.10/site-packages/aswrl_sync/rl/aswrl_env.py to aswrl_env.cpython-310.pyc
+[0.730s] byte-compiling /home/zhvv/aswrl_ws/install/aswrl_sync/lib/python3.10/site-packages/aswrl_sync/rl/export_policy.py to export_policy.cpython-310.pyc
+[0.731s] running install_data
+[0.731s] running install_egg_info
+[0.733s] removing '/home/zhvv/aswrl_ws/install/aswrl_sync/lib/python3.10/site-packages/aswrl_sync-0.1.0-py3.10.egg-info' (and everything under it)
+[0.734s] Copying ../../build/aswrl_sync/aswrl_sync.egg-info to /home/zhvv/aswrl_ws/install/aswrl_sync/lib/python3.10/site-packages/aswrl_sync-0.1.0-py3.10.egg-info
+[0.734s] running install_scripts
+[0.750s] Installing compensation_node script to /home/zhvv/aswrl_ws/install/aswrl_sync/lib/aswrl_sync
+[0.751s] Installing dummy_odom script to /home/zhvv/aswrl_ws/install/aswrl_sync/lib/aswrl_sync
+[0.751s] Installing export_policy script to /home/zhvv/aswrl_ws/install/aswrl_sync/lib/aswrl_sync
+[0.751s] Installing formation_controller script to /home/zhvv/aswrl_ws/install/aswrl_sync/lib/aswrl_sync
+[0.751s] Installing netem_controller script to /home/zhvv/aswrl_ws/install/aswrl_sync/lib/aswrl_sync
+[0.751s] Installing sync_client script to /home/zhvv/aswrl_ws/install/aswrl_sync/lib/aswrl_sync
+[0.751s] Installing sync_master script to /home/zhvv/aswrl_ws/install/aswrl_sync/lib/aswrl_sync
+[0.751s] Installing train_dqn script to /home/zhvv/aswrl_ws/install/aswrl_sync/lib/aswrl_sync
+[0.751s] writing list of installed files to '/home/zhvv/aswrl_ws/build/aswrl_sync/install.log'
+[0.777s] Invoked command in '/home/zhvv/aswrl_ws/src/aswrl_sync' returned '0': PYTHONPATH=/home/zhvv/aswrl_ws/build/aswrl_sync/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/zhvv/aswrl_ws/install/aswrl_sync/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/aswrl_sync build --build-base /home/zhvv/aswrl_ws/build/aswrl_sync/build install --record /home/zhvv/aswrl_ws/build/aswrl_sync/install.log --single-version-externally-managed install_data
